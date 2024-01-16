@@ -17,13 +17,14 @@ import pedrochess.chess.Color;
 
 public class Rook extends ChessPiece {
 
+	// Constructor initializes the Rook with its board and color
 	public Rook(Board board, Color color) {
 		super(board, color);
 	}
 
 	@Override
 	public String toString() {
-		return "R";
+		return "R"; // Represents the Rook as "R" when printed
 	}
 
 	@Override
@@ -31,6 +32,8 @@ public class Rook extends ChessPiece {
 		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 
 		Position p = new Position(0, 0);
+
+		// Move directions: above, left, right, below
 
 		// above
 		p.setValues(position.getRow() - 1, position.getColumn());
@@ -40,7 +43,6 @@ public class Rook extends ChessPiece {
 		}
 		if (getBoard().positionExists(p) && isThereOpponentPiece(p)) {
 			mat[p.getRow()][p.getColumn()] = true;
-			
 		}
 
 		// left

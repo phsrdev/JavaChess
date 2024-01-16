@@ -17,13 +17,14 @@ import pedrochess.chess.Color;
 
 public class Queen extends ChessPiece {
 
+	// Constructor initializes the Queen with its board and color
 	public Queen(Board board, Color color) {
 		super(board, color);
 	}
 
 	@Override
 	public String toString() {
-		return "Q";
+		return "Q"; // Represents the Queen as "Q" when printed
 	}
 	
 	@Override
@@ -32,6 +33,8 @@ public class Queen extends ChessPiece {
 		
 		Position p = new Position(0, 0);
 		
+		// Move directions: above, left, right, below, nw, ne, se, sw
+
 		// above
 		p.setValues(position.getRow() - 1, position.getColumn());
 		while (getBoard().positionExists(p) && !getBoard().thereIsAPiece(p)) {
